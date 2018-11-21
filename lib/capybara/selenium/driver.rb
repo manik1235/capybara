@@ -382,6 +382,7 @@ private
   end
 
   def wait_for_empty_page(timer)
+    puts "AJHK: Selenium driver.rb#wait_for_empty_page. find_xpath.empty?=#{find_xpath('/html/body/*').empty?}"
     until find_xpath('/html/body/*').empty?
       raise Capybara::ExpectationNotMet, 'Timed out waiting for Selenium session reset' if timer.expired?
 
